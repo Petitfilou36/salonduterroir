@@ -7,11 +7,11 @@
 <meta name="description" content="" />
 <meta name="author" content="Arthur Evain" />
 <!-- css -->
-<link href="css/bootstrap.min.css" rel="stylesheet" />
-<link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
-<link href="css/jcarousel.css" rel="stylesheet" />
-<link href="css/flexslider.css" rel="stylesheet" />
-<link href="css/style.css" rel="stylesheet" />
+<link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+<link href="../assets/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+<link href="../assets/css/jcarousel.css" rel="stylesheet" />
+<link href="../assets/css/flexslider.css" rel="stylesheet" />
+<link href="../assets/css/style.css" rel="stylesheet" />
  
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
@@ -22,7 +22,7 @@
 <body>
 <div id="wrapper">
 	<!-- start header -->
-		<header>
+	<header>
         <div class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
@@ -31,13 +31,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"/></a>
+                  <a class="navbar-brand" href="index.html"><img src="../assets/img/logo.png" alt="logo"/></a>
                 </div>
                 <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
-                        <li><a href="index.html">Accueil</a></li> 
-                        <li class="active"><a href="pricing.html">Tarifs</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="pricing.html">Tarifs</a></li>
+                        <li class="active"><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -47,65 +47,53 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-				<h2 class="pageTitle">Accueil | Tarifs</h2>
+				<h2 class="pageTitle">Accueil | Contact</h2>
 			</div>
 		</div>
 	</div>
 	</section>
 	<section id="content">
-	<div class="container">	 
-		<!-- end divider -->
-		<div class="row">
-			<div class="col-lg-12">
-				<h4>Nos plans</h4>
-			</div>
-			<div class="col-lg-6">
-				<div class="pricing-box-item">
-					<div class="pricing-heading">
-						<h3><strong>Extérieur</strong></h3>
+	
+	<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+								</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="contact-form">
+				<form id="contact-form" action="submit_form.php" method="post" role="form" novalidate="novalidate">
+					<div class="form-group has-feedback">
+						<label for="name">Nom*</label>
+						<input type="text" class="form-control" id="name" name="name" placeholder="" required>
+						<i class="fa fa-user form-control-feedback"></i>
 					</div>
-					<div class="pricing-terms">
-						<h6>40€</h6>
+					<div class="form-group has-feedback">
+						<label for="email">Email*</label>
+						<input type="email" class="form-control" id="email" name="email" placeholder="" required>
+						<i class="fa fa-envelope form-control-feedback"></i>
 					</div>
-					<div class="pricing-container">
-						<ul>
-							<li><i class="icon-ok"></i> <b>Barnum non inclus</b></li>
-							<li><i class="icon-ok"></i> Entrée de l'école</li>
-							<li><i class="icon-ok"></i> 9m²</li>
-							<li><i class="icon-ok"></i> Table fournie</li>
-							<li><i class="icon-ok"></i> Electricité incluse</li>
-						</ul>
+					<div class="form-group has-feedback">
+						<label for="message">Message*</label>
+						<textarea class="form-control" rows="6" id="message" name="message" placeholder=""></textarea>
+						<i class="fa fa-pencil form-control-feedback"></i>
 					</div>
-					<div class="pricing-action">
-						<a href="buy1.html" class="btn btn-medium btn-theme"><i class="icon-bolt"></i> Réserver</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-6">
-				<div class="pricing-box-item">
-					<div class="pricing-heading">
-						<h3><strong>Intérieur</strong></h3>
-					</div>
-					<div class="pricing-terms">
-						<h6>60€-90€</h6>
-					</div>
-					<div class="pricing-container">
-						<ul>
-							<li><i class="icon-ok"></i> <b>Barnum non inclus</b></li>
-							<li><i class="icon-ok"></i> Hall de l'école</li>
-							<li><i class="icon-ok"></i> 7,5 - 10m²</li>
-							<li><i class="icon-ok"></i> Table fournie</li>
-							<li><i class="icon-ok"></i> Electricité incluse</li>
-						</ul>
-					</div>
-					<div class="pricing-action">
-						<a href="buy2.html" class="btn btn-medium btn-theme"><i class="icon-bolt"></i> Réserver</a>
-					</div>
-				</div>
+					<input type="submit" value="Envoyer" class="btn btn-default">
+				</form>
 			</div>
 		</div>
+		<div class="col-md-6">  
+					<p>Veuillez remplir ce formulaire pour toute demande.</p>
+								<br/>
+					<p><b>Votre message sera traité dans les plus brefs délais.</b></p>
+								<br/>
+					<p>Téléphone: +33 7 72 29 99 76<br>
+			E-mail: arthur.evain@telecom-paris.fr</p>
+								</div>
+							</div>
 	</div>
-	</section> 
+ 
+	</section>
 	<footer>
 		<div class="container">
 			<div class="row">
@@ -126,7 +114,10 @@
 					<div class="widget">
 						<h5 class="widgetheading">Liens rapides</h5>
 						<ul class="link-list">
-							<li><a href="contact.html">Contactez-nous</a></li>
+							<li><a href="#">Derniers évènements</a></li>
+							<li><a href="#">Termes et conditions</a></li>
+							<li><a href="#">Politique de confidentialité</a></li>
+							<li><a href="#">Contactez-nous</a></li>
 						</ul>
 					</div>
 				</div>
@@ -158,15 +149,16 @@
 <!-- javascript
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="js/jquery.js"></script>
-<script src="js/jquery.easing.1.3.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.fancybox.pack.js"></script>
-<script src="js/jquery.fancybox-media.js"></script> 
-<script src="js/portfolio/jquery.quicksand.js"></script>
-<script src="js/portfolio/setting.js"></script>
-<script src="js/jquery.flexslider.js"></script>
-<script src="js/animate.js"></script>
-<script src="js/custom.js"></script>
+<script src="../assets/js/jquery.js"></script>
+<script src="../assets/js/jquery.easing.1.3.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.fancybox.pack.js"></script>
+<script src="../assets/js/jquery.fancybox-media.js"></script> 
+<script src="../assets/js/portfolio/jquery.quicksand.js"></script>
+<script src="../assets/js/portfolio/setting.js"></script>
+<script src="../assets/js/jquery.flexslider.js"></script>
+<script src="../assets/js/animate.js"></script>
+<script src="../assets/js/custom.js"></script>
+<script src="../assets/js/validate.js"></script>
 </body>
 </html>
