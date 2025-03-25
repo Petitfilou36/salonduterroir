@@ -1,28 +1,75 @@
+<!-- filepath: c:\Users\chambon\Documents\N-O\SDT\SDT onglets claude\salonduterroir\pages\plan.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Moto Business HTML5 Responsive Web Template | webthemez</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="" />
-<meta name="author" content="http://webthemez.com" />
-<!-- css -->
-<link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
-<link href="../assets/css/fancybox/jquery.fancybox.css" rel="stylesheet">
-<link href="../assets/css/jcarousel.css" rel="stylesheet" />
-<link href="../assets/css/flexslider.css" rel="stylesheet" />
-<link href="../assets/css/style.css" rel="stylesheet" />
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta charset="utf-8">
+    <title>Plan du Salon du Terroir</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Plan interactif du Salon du Terroir" />
+    <meta name="author" content="Arthur Evain" />
+    <!-- css -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../assets/css/style.css" rel="stylesheet" />
+    <link href="../assets/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+    <link href="../assets/css/jcarousel.css" rel="stylesheet" />
+    <link href="../assets/css/flexslider.css" rel="stylesheet" />
+    <link href="../assets/js/owl-carousel/owl.carousel.css" rel="stylesheet"> 
+    
+    <style>
+        .map-container {
+            position: relative;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        .stand-rect {
+            position: absolute;
+            border: 2px solid rgba(51, 122, 183, 0.7);
+            background-color: rgba(51, 122, 183, 0.3);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .stand-rect:hover {
+            background-color: rgba(51, 122, 183, 0.6);
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(51, 122, 183, 0.8);
+        }
+        .stand-tooltip {
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 20;
+            min-width: 200px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .stand-tooltip h4 {
+            margin-top: 0;
+            color: #337ab7;
+        }
+        .plan-legend {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            border: 1px solid #eee;
+        }
+    </style>
 
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 </head>
 <body>
 <div id="wrapper">
-
-	<!-- start header -->
-		<header>
+    <!-- start header -->
+    <header>
         <div class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
@@ -31,171 +78,238 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"/></a>
+                    <a class="navbar-brand" href="../index.html"><img src="../assets/img/logo_SDT.png" alt="logo" style="height: 120px; margin-top: -37px;"/></a>
                 </div>
                 <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
-                        <li><a href="index.html">Accueil</a></li> 
-						<li><a href="about.html">A propos</a></li>
-						<li><a href="services.html">Catalogue</a></li>
+                        <li><a href="../index.html">Accueil</a></li> 
+                        <li><a href="https://www.helloasso.com/associations/salon-du-terroir/evenements/billetterie-salon-2025">Billeterie</a></li>
+                        <li><a href="exposants.html">Exposants</a></li>
                         <li class="active"><a href="plan.html">Plan</a></li>
-                        <li><a href="pricing.html">Tarifs</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </div>
-	</header><!-- end header -->
-	<section id="inner-headline">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<h2 class="pageTitle">Accueil | Plan</h2>
-			</div>
-		</div>
-	</div>
-	</section>
-	<section id="content">
-		<div class="container content">		
-        <!-- Service Blcoks -->
-        <div class="row service-v1 margin-bottom-40">
-            <div class="col-md-4 md-margin-bottom-40">
-               <img class="img-responsive" src="img/service1.jpg" alt="">   
-                <h3>Web Development</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident, doloribus omnis minus temporibus perferendis nesciunt quam repellendus nulla nemo ipsum odit corrupti consequuntur possimus</p>        
-            </div>
-            <div class="col-md-4">
-                <img class="img-responsive" src="img/service2.jpg" alt="">            
-                <h3>Mobile Development</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident, doloribus omnis minus temporibus perferendis nesciunt quam repellendus nulla nemo ipsum odit corrupti consequuntur possimus</p>        
-            </div>
-            <div class="col-md-4 md-margin-bottom-40">
-              <img class="img-responsive" src="img/service3.jpg" alt="">  
-                <h3>Responsive Design</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident, doloribus omnis minus temporibus perferendis nesciunt quam repellendus nulla nemo ipsum odit corrupti consequuntur possimus</p>        
-            </div>
-        </div>
-        <!-- End Service Blcoks -->
+    </header>
+    <!-- end header -->
 
-        <hr class="margin-bottom-50">
-
-        <!-- Info Blcoks -->
-        <div class="row">
-            <div class="col-sm-4 info-blocks">
-                <i class="icon-info-blocks fa fa-bell-o"></i>
-                <div class="info-blocks-in">
-                    <h3>Awesome Design</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p>
+    <section id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Plan du Salon du Terroir</h1>
+                    <p>Passez votre souris sur les stands pour afficher les informations des exposants.</p>
                 </div>
             </div>
-            <div class="col-sm-4 info-blocks">
-                <i class="icon-info-blocks fa fa-hdd-o"></i>
-                <div class="info-blocks-in">
-                    <h3>FontAwesome</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="map-container">
+                        <img id="plan-image" src="../assets/img/Plan scale-1.png" alt="Plan du Salon" style="width: 100%; height: auto;" />
+                        <div id="tooltip" class="stand-tooltip"></div>
+                        <!-- Les rectangles des stands seront générés par JavaScript -->
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-4 info-blocks">
-                <i class="icon-info-blocks fa fa-lightbulb-o"></i>
-                <div class="info-blocks-in">
-                    <h3>Bootstrap</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="plan-legend">
+                        <h3>Légende</h3>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <p><span style="color: #337ab7;">■</span> Vins</p>
+                            </div>
+                            <div class="col-md-4">
+                                <p><span style="color: #5cb85c;">■</span> Produits alimentaires</p>
+                            </div>
+                            <div class="col-md-4">
+                                <p><span style="color: #f0ad4e;">■</span> Artisanat</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- End Info Blcoks -->
-
-       
-        <!-- Info Blcoks -->
-        <div class="row">
-            <div class="col-sm-4 info-blocks">
-                <i class="icon-info-blocks fa fa-code"></i>
-                <div class="info-blocks-in">
-                    <h3>SEO Ready</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p>
-                </div>
-            </div>
-            <div class="col-sm-4 info-blocks">
-                <i class="icon-info-blocks fa fa-compress"></i>
-                <div class="info-blocks-in">
-                    <h3>Fully Responsive</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p>
-                </div>
-            </div>
-            <div class="col-sm-4 info-blocks">
-                <i class="icon-info-blocks fa fa-html5"></i>
-                <div class="info-blocks-in">
-                    <h3>CSS3 + HTML5</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt</p>
-                </div>
-            </div>
-        </div>
-        <!-- End Info Blcoks -->
-
-        
-    </div>
     </section>
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3">
-					<div class="widget">
-						<h5 class="widgetheading">Contact</h5>
-						<address>
-						<strong>Salon du Terroir</strong><br>
-						19 Place Marguerite Perey<br>
-						91120 Palaiseau</address>
-						<p>
-							<i class="icon-phone"></i> +33 7 72 29 99 76 <br>
-							<i class="icon-envelope-alt"></i> arthur.evain@telecom-paris.fr
-						</p>
-					</div>
-				</div>
-				<div class="col-lg-3">
-					<div class="widget">
-						<h5 class="widgetheading">Liens rapides</h5>
-						<ul class="link-list">
-							<li><a href="contact.html">Contactez-nous</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="sub-footer">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="copyright">
-							<p>
-								<span>&copy; Salon du Terroir 2025 Tous droits réservés. Template by </span><a href="http://webthemez.com" target="_blank">WebThemez</a>
-							</p>
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<ul class="social-network">
-							<li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#" data-placement="top" title="Instagram"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		</footer>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="widget">
+                        <h5 class="widgetheading">Contact</h5>
+                        <address>
+                            <strong>Salon du Terroir</strong><br>
+                            19 Place Marguerite Perey<br>
+                            91120 Palaiseau</address>
+                        <p>
+                            <i class="icon-phone"></i> +33 7 72 29 99 76 <br>
+                            <i class="icon-envelope-alt"></i> arthur.evain@telecom-paris.fr
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="widget">
+                        <h5 class="widgetheading">Liens rapides</h5>
+                        <ul class="link-list">
+                            <li><a href="../contact.html">Contactez-nous</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sub-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="copyright">
+                            <p>
+                                <span>&copy; Salon du Terroir 2025 Tous droits réservés. Template by </span><a href="http://webthemez.com" target="_blank">WebThemez</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <ul class="social-network">
+                            <li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" data-placement="top" title="Instagram"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </div>
 <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
 <!-- javascript
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="js/jquery.js"></script>
-<script src="js/jquery.easing.1.3.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.fancybox.pack.js"></script>
-<script src="js/jquery.fancybox-media.js"></script> 
-<script src="js/portfolio/jquery.quicksand.js"></script>
-<script src="js/portfolio/setting.js"></script>
-<script src="js/jquery.flexslider.js"></script>
-<script src="js/animate.js"></script>
-<script src="js/custom.js"></script>
+<script src="../assets/js/jquery.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/jquery.fancybox.pack.js"></script>
+<script src="../assets/js/jquery.flexslider.js"></script>
+<script src="../assets/js/custom.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Liste des stands avec leurs données
+        const stands = [
+            {
+                id: 1,
+                x: 10,  // Position en pourcentage par rapport à la largeur de l'image
+                y: 20,  // Position en pourcentage par rapport à la hauteur de l'image
+                width: 15,  // Largeur en pourcentage
+                height: 10, // Hauteur en pourcentage
+                nom: "Domaine des Coteaux",
+                categorie: "Vin",
+                region: "Bourgogne",
+                description: "Vins de Bourgogne, spécialités en Pinot Noir et Chardonnay.",
+                color: "#337ab7" // Couleur bleue pour les vins
+            },
+            {
+                id: 2,
+                x: 30,
+                y: 20,
+                width: 15,
+                height: 10,
+                nom: "La Fromagerie Alpine",
+                categorie: "Fromage",
+                region: "Savoie",
+                description: "Fromages de Savoie: Beaufort, Reblochon, Tome des Bauges.",
+                color: "#5cb85c" // Couleur verte pour les produits alimentaires
+            },
+            {
+                id: 3,
+                x: 50,
+                y: 20,
+                width: 15,
+                height: 10,
+                nom: "Charcuterie du Terroir",
+                categorie: "Charcuterie",
+                region: "Auvergne",
+                description: "Jambons, saucissons et pâtés traditionnels d'Auvergne.",
+                color: "#5cb85c"
+            },
+            {
+                id: 4,
+                x: 10,
+                y: 40,
+                width: 15,
+                height: 10,
+                nom: "Artisanat du Jura",
+                categorie: "Artisanat",
+                region: "Jura",
+                description: "Objets en bois sculptés à la main.",
+                color: "#f0ad4e" // Couleur orange pour l'artisanat
+            },
+            {
+                id: 5,
+                x: 30,
+                y: 40,
+                width: 15,
+                height: 10,
+                nom: "Vignobles de Loire",
+                categorie: "Vin",
+                region: "Val de Loire",
+                description: "Sancerre, Vouvray et autres vins de Loire.",
+                color: "#337ab7"
+            },
+            // Ajoutez d'autres stands selon vos besoins
+        ];
+
+        const mapContainer = document.querySelector('.map-container');
+        const tooltip = document.getElementById('tooltip');
+
+        // Créer les rectangles des stands
+        stands.forEach(stand => {
+            const standElement = document.createElement('div');
+            standElement.classList.add('stand-rect');
+            standElement.id = `stand-${stand.id}`;
+            standElement.style.left = `${stand.x}%`;
+            standElement.style.top = `${stand.y}%`;
+            standElement.style.width = `${stand.width}%`;
+            standElement.style.height = `${stand.height}%`;
+            standElement.style.borderColor = stand.color;
+            standElement.style.backgroundColor = stand.color.replace(')', ', 0.3)').replace('rgb', 'rgba');
+            
+            standElement.dataset.id = stand.id;
+            standElement.dataset.nom = stand.nom;
+            standElement.dataset.categorie = stand.categorie;
+            standElement.dataset.region = stand.region;
+            standElement.dataset.description = stand.description;
+            
+            standElement.innerHTML = `<span style="display: flex; justify-content: center; align-items: center; height: 100%; color: white; font-weight: bold;">${stand.id}</span>`;
+            
+            mapContainer.appendChild(standElement);
+            
+            // Gestion des événements de survol
+            standElement.addEventListener('mouseenter', function(e) {
+                const rect = this.getBoundingClientRect();
+                const mapRect = mapContainer.getBoundingClientRect();
+                
+                tooltip.innerHTML = `
+                    <h4>${this.dataset.nom}</h4>
+                    <p><strong>Catégorie:</strong> ${this.dataset.categorie}</p>
+                    <p><strong>Région:</strong> ${this.dataset.region}</p>
+                    <p>${this.dataset.description}</p>
+                `;
+                
+                // Positionnement du tooltip
+                const tooltipX = rect.left - mapRect.left + rect.width + 10;
+                const tooltipY = rect.top - mapRect.top;
+                
+                tooltip.style.left = `${tooltipX}px`;
+                tooltip.style.top = `${tooltipY}px`;
+                tooltip.style.opacity = '1';
+            });
+            
+            standElement.addEventListener('mouseleave', function() {
+                tooltip.style.opacity = '0';
+            });
+        });
+    });
+</script>
 </body>
 </html>

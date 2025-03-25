@@ -85,6 +85,7 @@
         padding: 10px;
     }
 </style>
+<script src="https://kit.fontawesome.com/0b67616674.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div id="wrapper">
@@ -131,14 +132,84 @@
 			<div class="row">
 				<div class="col-md-12">
 					<!-- Navigation des onglets -->
-					<ul class="nav nav-tabs" role="tablist">
-						<li role="presentation" class="active"><a href="#vin" aria-controls="vin" role="tab" data-toggle="tab">Vin</a></li>
-						<li role="presentation"><a href="#champagne" aria-controls="champagne" role="tab" data-toggle="tab">Champagne</a></li>
-						<li role="presentation"><a href="#viande" aria-controls="viande" role="tab" data-toggle="tab">Viande et charcuterie</a></li>
-						<li role="presentation"><a href="#fromage" aria-controls="fromage" role="tab" data-toggle="tab">Fromage</a></li>
-						<li role="presentation"><a href="#alcools" aria-controls="alcools" role="tab" data-toggle="tab">Alcools forts</a></li>
-						<li role="presentation"><a href="#autres" aria-controls="autres" role="tab" data-toggle="tab">Autres produits</a></li>
+					<ul class="nav nav-tabs custom-tabs" role="tablist">
+						<li role="presentation" class="active">
+							<a href="#vin" aria-controls="vin" role="tab" data-toggle="tab">
+								<i class="fa-solid fa-wine-glass"></i> Vin
+							</a>
+						</li>
+						<li role="presentation">
+							<a href="#champagne" aria-controls="champagne" role="tab" data-toggle="tab">
+								<i class="fa-solid fa-champagne-glasses"></i> Champagne
+							</a>
+						</li>
+						<li role="presentation">
+							<a href="#viande" aria-controls="viande" role="tab" data-toggle="tab">
+								<i class="fa fa-cutlery"></i> Viande et charcuterie
+							</a>
+						</li>
+						<li role="presentation">
+							<a href="#fromage" aria-controls="fromage" role="tab" data-toggle="tab">
+								<i class="fa fa-cheese"></i> Fromage
+							</a>
+						</li>
+						<li role="presentation">
+							<a href="#alcools" aria-controls="alcools" role="tab" data-toggle="tab">
+								<i class="fa-solid fa-whiskey-glass"></i> Alcools forts
+							</a>
+						</li>
+						<li role="presentation">
+							<a href="#autres" aria-controls="autres" role="tab" data-toggle="tab">
+								<i class="fa fa-shopping-basket"></i> Autres produits
+							</a>
+						</li>
 					</ul>
+					
+					<style>
+						.custom-tabs {
+							border-bottom: 2px solid #e74c3c;
+							margin-bottom: 20px;
+						}
+						.custom-tabs > li {
+							margin-bottom: 0;
+						}
+						.custom-tabs > li > a {
+							border: none;
+							border-radius: 4px 4px 0 0;
+							background-color: #ecf0f1;
+							color: #7f8c8d;
+							margin-right: 5px;
+							padding: 12px 15px;
+							transition: all 0.3s ease;
+						}
+						.custom-tabs > li > a:hover {
+							background-color: #e74c3c;
+							color: #fff;
+							border: none;
+						}
+						.custom-tabs > li.active > a,
+						.custom-tabs > li.active > a:hover,
+						.custom-tabs > li.active > a:focus {
+							color: #fff;
+							background-color: #e74c3c;
+							border: none;
+							font-weight: bold;
+						}
+						.custom-tabs > li > a > i {
+							margin-right: 5px;
+						}
+						
+						@media (max-width: 767px) {
+							.custom-tabs > li {
+								float: none;
+								display: block;
+								margin-bottom: 5px;
+							}
+							.custom-tabs > li > a {
+								border-radius: 4px;
+							}
+						}
+					</style></li>
 
 					<!-- Contenu des onglets -->
 					<div class="tab-content">
@@ -197,7 +268,7 @@
 											<p>Stand A3</p>
 										</div>
 										<div class="col-md-4 text-center">
-											<img src="../assets/img/exposants/exposant6.png" alt="Domaine de Magalanne" class="img-responsive" />
+											<img src="../assets/img/exposants/exposant6.jpg" alt="Domaine de Magalanne" class="img-responsive" />
 											<h4>Domaine de Magalanne</h4>
 												<p>(Côtes du Rhône) - Stand B1</p>
 										</div>
@@ -401,9 +472,6 @@
 					<div class="widget">
 						<h5 class="widgetheading">Liens rapides</h5>
 						<ul class="link-list">
-							<!--<li><a href="#">Derniers évènements</a></li>
-							<li><a href="#">Termes et conditions</a></li>
-							<li><a href="#">Politique de confidentialité</a></li>-->
 							<li><a href="../contact.html">Contactez-nous</a></li>
 						</ul>
 					</div>
@@ -431,6 +499,27 @@
 			</div>
 		</div>
 	</footer>
+
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		
+		#wrapper {
+			min-height: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+		
+		#content {
+			flex: 1 0 auto;
+		}
+		
+		footer {
+			flex-shrink: 0;
+		}
+	</style>
 <!-- Bouton de retour en haut -->
 <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
 <!-- Inclusion des fichiers JavaScript -->

@@ -95,6 +95,7 @@
 	</div>
  
 	</section>
+	<!-- Footer -->
 	<footer>
 		<div class="container">
 			<div class="row">
@@ -115,10 +116,7 @@
 					<div class="widget">
 						<h5 class="widgetheading">Liens rapides</h5>
 						<ul class="link-list">
-							<li><a href="#">Derniers évènements</a></li>
-							<li><a href="#">Termes et conditions</a></li>
-							<li><a href="#">Politique de confidentialité</a></li>
-							<li><a href="#">Contactez-nous</a></li>
+							<li><a href="../contact.html">Contactez-nous</a></li>
 						</ul>
 					</div>
 				</div>
@@ -144,7 +142,28 @@
 				</div>
 			</div>
 		</div>
-		</footer>
+	</footer>
+
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		
+		#wrapper {
+			min-height: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+		
+		#content {
+			flex: 1 0 auto;
+		}
+		
+		footer {
+			flex-shrink: 0;
+		}
+	</style>
 </div>
 <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
 <!-- javascript
