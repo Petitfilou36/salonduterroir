@@ -100,7 +100,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <!-- Logo du site -->
-                    <a class="navbar-brand" href="../index.html"><img src="../assets/img/logo.png" alt="logo"/></a>
+					<a class="navbar-brand" href="../index.html"><img src="../assets/img/logo_SDT.png" alt="logo" style="height: 120px; margin-top: -37px;"/></a>
                 </div>
                 <!-- Menu de navigation -->
                 <div class="navbar-collapse collapse ">
@@ -126,213 +126,256 @@
 					<p class="text-center">Découvrez les exposants présents au Salon du Terroir, triés par produit et région.</p>
 				</div>
 			</div>
-			<!-- Liste des exposants -->
+			
+			<!-- Système d'onglets -->
 			<div class="row">
 				<div class="col-md-12">
-					<h3 class="section-title">Vin</h3>
-					<hr class="section-divider">
-					<!-- Bordeaux -->
-					<h4>Bordeaux</h4>
-					<div class="row">
-						<div class="col-md-4 text-center">
-							<img src="../assets/img/exposants/exposant1.jpg" alt="EARL Vignoble Merlet" class="img-responsive" />
-							<h4>EARL Vignoble Merlet</h4>
-								<p>Stand B2</p>
+					<!-- Navigation des onglets -->
+					<ul class="nav nav-tabs" role="tablist">
+						<li role="presentation" class="active"><a href="#vin" aria-controls="vin" role="tab" data-toggle="tab">Vin</a></li>
+						<li role="presentation"><a href="#champagne" aria-controls="champagne" role="tab" data-toggle="tab">Champagne</a></li>
+						<li role="presentation"><a href="#viande" aria-controls="viande" role="tab" data-toggle="tab">Viande et charcuterie</a></li>
+						<li role="presentation"><a href="#fromage" aria-controls="fromage" role="tab" data-toggle="tab">Fromage</a></li>
+						<li role="presentation"><a href="#alcools" aria-controls="alcools" role="tab" data-toggle="tab">Alcools forts</a></li>
+						<li role="presentation"><a href="#autres" aria-controls="autres" role="tab" data-toggle="tab">Autres produits</a></li>
+					</ul>
+
+					<!-- Contenu des onglets -->
+					<div class="tab-content">
+						<!-- Onglet Vin -->
+						<div role="tabpanel" class="tab-pane active" id="vin">
+							<div class="row">
+								<div class="col-md-12">
+									<h3 class="section-title">Vin</h3>
+									<hr class="section-divider">
+									<!-- Bordeaux -->
+									<h4>Bordeaux</h4>
+									<div class="row">
+										<div class="col-md-4 text-center">
+											<img src="../assets/img/exposants/exposant1.jpg" alt="EARL Vignoble Merlet" class="img-responsive" />
+											<h4>EARL Vignoble Merlet</h4>
+												<p>Stand B2</p>
+										</div>
+										<div class="col-md-4 text-center">
+											<img src="../assets/img/exposants/exposant3.png" alt="chateau TerreFort" class="img-responsive" style="display: block; margin: 0 auto;" />
+											<h4>chateau TerreFort</h4>
+											<p>Stand C5</p>
+										</div>
+										<div class="col-md-4 text-center">
+											<img src="../assets/img/exposants/exposant4.png" alt="Domaine de la Gauche" class="img-responsive" />
+											<h4>Domaine de la Gauche</h4>
+												<p>Stand B6</p>
+										</div>
+									</div>
+									<hr class="subsection-divider">
+									<!-- Bourgogne -->
+									<h4>Bourgogne</h4>
+									<div class="row">
+										<div class="col-md-4 text-center">
+											<img src="../assets/img/exposants/exposant2.png" alt="Chablis Mosnier" class="img-responsive" />
+											<h4>Chablis Mosnier</h4>
+												<p>(Chablis et crémant) - Stand A1</p>
+										</div>
+										<div class="col-md-4 text-center">
+											<img src="../assets/img/exposants/exposant8.png" alt="Domaine des Riots" class="img-responsive" />
+											<h4>Domaine des Riots</h4>
+												<p>Stand A4</p>
+										</div>
+										<div class="col-md-4 text-center">
+											<img src="../assets/img/exposants/exposant10.png" alt="Domaine de la Galopière" class="img-responsive" />
+											<h4>Domaine de la Galopière</h4>
+												<p>(côte de Beaune) - Stand C3</p>
+										</div>
+									</div>
+									<hr class="subsection-divider">
+									<!-- Rhône -->
+									<h4>Vallée du Rhône</h4>
+									<div class="row">
+										<div class="col-md-4 text-center">
+										<img src="../assets/img/exposants/exposant9.png" alt="comte de lauze" class="img-responsive" />
+										<h4>Châteauneuf-du-Pape - Comte de Lauze</h4>
+											<p>Stand A3</p>
+										</div>
+										<div class="col-md-4 text-center">
+											<img src="../assets/img/exposants/exposant6.png" alt="Domaine de Magalanne" class="img-responsive" />
+											<h4>Domaine de Magalanne</h4>
+												<p>(Côtes du Rhône) - Stand B1</p>
+										</div>
+										<div class="col-md-4 text-center">
+											<img src="../assets/img/exposants/exposant17.png" alt="Domaine la Péquélette" class="img-responsive" />
+											<h4>Domaine la Péquélette</h4>
+											<p>Rhône (Vinsobres) - Stand B5</p>
+										</div>
+									</div>
+									<hr class="subsection-divider">
+									<!-- Chinon -->
+									<h4>Chinon</h4>
+									<div class="row">
+										<div class="col-md-4 text-center">
+											<img src="../assets/img/exposants/exposant5.png" alt="EARL BLANDIN" class="img-responsive" />
+											<h4>EARL BLANDIN</h4>
+												<p>Stand A2</p>
+										</div>
+									</div>
+									<hr class="subsection-divider">
+									<!-- Côtes d'Auvergne -->
+									<h4>Côtes d'Auvergne</h4>
+									<div class="row">
+										<div class="col-md-4 text-center">
+											<img src="../assets/img/exposants/exposant7.jpg" alt="La tour de Pierre" class="img-responsive" />
+											<h4>La tour de Pierre</h4>
+												<p>Stand B4</p>
+										</div>
+									</div>
+									<hr class="subsection-divider">
+									<!-- Beaujolais -->
+									<h4>Beaujolais</h4>
+									<div class="row">
+										<div class="col-md-4 text-center">
+											<img src="../assets/img/exposants/exposant11.png" alt="Montchanay" class="img-responsive" />
+											<h4>Montchanay</h4>
+												<p>Stand D1</p>
+										</div>
+									</div>
+									<hr class="subsection-divider">
+									<!-- Languedoc-Roussillon -->
+									<h4>Languedoc-Roussillon</h4>
+									<div class="row">
+										<div class="col-md-4 text-center">
+											<img src="../assets/img/exposants/exposant12.png" alt="Chateau Aiguilloux" class="img-responsive" />
+											<h4>Chateau Aiguilloux</h4>
+												<p>Stand A5</p>
+										</div>
+									</div>
+									<hr class="subsection-divider">
+									<h4>Jura</h4>
+									<div class="row">
+										<div class="col-md-4 text-center">
+											<img src="../assets/img/exposants/exposant18.png" alt="Ferme Ekoto" class="img-responsive" />
+											<h4>Ferme Ekoto</h4>
+											<p>Jura - Stand C2</p>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
-                        <div class="col-md-4 text-center">
-                            <img src="../assets/img/exposants/exposant3.png" alt="chateau TerreFort" class="img-responsive" style="display: block; margin: 0 auto;" />
-                            <h4>chateau TerreFort</h4>
-                            <p>Stand C5</p>
-                        </div>
-						<div class="col-md-4 text-center">
-							<img src="../assets/img/exposants/exposant4.png" alt="Domaine de la Gauche" class="img-responsive" />
-							<h4>Domaine de la Gauche</h4>
-								<p>Stand B6</p>
+						
+						<!-- Onglet Champagne -->
+						<div role="tabpanel" class="tab-pane" id="champagne">
+							<div class="row">
+								<div class="col-md-12">
+									<h3 class="section-title">Champagne</h3>
+									<hr class="section-divider">
+									<div class="row">
+										<div class="col-md-4 text-center">
+											<img src="../assets/img/exposants/exposant15.png" alt="Masse fils liebart" class="img-responsive" />
+											<h4>Masse fils liebart</h4>
+											<p>Champagne - Stand B3</p>
+										</div>
+										<div class="col-md-4 text-center">
+											<img src="../assets/img/exposants/exposant16.png" alt="Dame des Agis" class="img-responsive" />
+											<h4>Dame des Agis</h4>
+											<p>Champagne - Stand A6</p>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
-					</div>
-					<hr class="subsection-divider">
-					<!-- Bourgogne -->
-					<h4>Bourgogne</h4>
-					<div class="row">
-						<div class="col-md-4 text-center">
-							<img src="../assets/img/exposants/exposant2.png" alt="Chablis Mosnier" class="img-responsive" />
-							<h4>Chablis Mosnier</h4>
-								<p>(Chablis et crémant) - Stand A1</p>
+						
+						<!-- Onglet Viande et charcuterie -->
+						<div role="tabpanel" class="tab-pane" id="viande">
+							<div class="row">
+								<div class="col-md-12">
+									<h3 class="section-title">Viande et charcuterie</h3>
+									<hr class="section-divider">
+									<div class="row">
+										<div class="col-md-4 text-center">
+											<img src="../assets/img/exposants/exposant18.png" alt="Ferme Ekoto" class="img-responsive" />
+											<h4>Ferme Ekoto</h4>
+											<p>Jura - Stand C2</p>
+										</div>
+										<div class="col-md-4 text-center">
+											<img src="../assets/img/exposants/exposant13.avif" alt="Gourmet du Jura" class="img-responsive" />
+											<h4>Gourmet du Jura</h4>
+											<p>Jura - Stand C4</p>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
-						<div class="col-md-4 text-center">
-							<img src="../assets/img/exposants/exposant8.png" alt="Domaine des Riots" class="img-responsive" />
-							<h4>Domaine des Riots</h4>
-								<p>Stand A4</p>
+						
+						<!-- Onglet Fromage -->
+						<div role="tabpanel" class="tab-pane" id="fromage">
+							<div class="row">
+								<div class="col-md-12">
+									<h3 class="section-title">Fromage</h3>
+									<hr class="section-divider">
+									<div class="row">
+										<div class="col-md-4 text-center">
+											<img src="../assets/img/exposants/exposant13.avif" alt="Gourmet du Jura" class="img-responsive" />
+											<h4>Gourmet du Jura</h4>
+											<p>Jura - Stand C4</p>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
-						<div class="col-md-4 text-center">
-							<img src="../assets/img/exposants/exposant10.png" alt="Domaine de la Galopière" class="img-responsive" />
-							<h4>Domaine de la Galopière</h4>
-								<p>(côte de Beaune) - Stand C3</p>
+						
+						<!-- Onglet Alcools forts -->
+						<div role="tabpanel" class="tab-pane" id="alcools">
+							<div class="row">
+								<div class="col-md-12">
+									<h3 class="section-title">Alcools forts</h3>
+									<hr class="section-divider">
+									<div class="row">
+										<div class="col-md-4 text-center">
+											<img src="../assets/img/exposants/exposant14.png" alt="Distilleries des scories" class="img-responsive" />
+											<h4>Distilleries des scories</h4>
+											<p>Liqueurs - Auvergne - En vacance, attendre la semaine prochaine</p>
+										</div>
+										<div class="col-md-4 text-center">
+											<img src="../assets/img/exposants/exposant22.png" alt="Rhum Kodiak" class="img-responsive" />
+											<h4>Rhum Kodiak</h4>
+											<p>Rhum arrangé - Stand D5</p>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
-					</div>
-                    <hr class="subsection-divider">
-					<!-- Rhône -->
-					<h4>Vallée du Rhône</h4>
-					<div class="row">
-                        <div class="col-md-4 text-center">
-                        <img src="../assets/img/exposants/exposant9.png" alt="comte de lauze" class="img-responsive" />
-                        <h4>Châteauneuf-du-Pape - Comte de Lauze</h4>
-                            <p>Stand A3</p>
-                        </div>
-						<div class="col-md-4 text-center">
-							<img src="../assets/img/exposants/exposant6.png" alt="Domaine de Magalanne" class="img-responsive" />
-							<h4>Domaine de Magalanne</h4>
-								<p>(Côtes du Rhône) - Stand B1</p>
-						</div>
-                        <div class="col-md-4 text-center">
-							<img src="../assets/img/exposants/exposant17.png" alt="Domaine la Péquélette" class="img-responsive" />
-							<h4>Domaine la Péquélette</h4>
-							<p>Rhône (Vinsobres) - Stand B5</p>
-						</div>
-					</div>
-					<hr class="subsection-divider">
-					<!-- Chinon -->
-					<h4>Chinon</h4>
-					<div class="row">
-						<div class="col-md-4 text-center">
-							<img src="../assets/img/exposants/exposant5.png" alt="EARL BLANDIN" class="img-responsive" />
-							<h4>EARL BLANDIN</h4>
-								<p>Stand A2</p>
-						</div>
-					</div>
-					<hr class="subsection-divider">
-					<!-- Côtes d'Auvergne -->
-					<h4>Côtes d'Auvergne</h4>
-					<div class="row">
-						<div class="col-md-4 text-center">
-							<img src="../assets/img/exposants/exposant7.jpg" alt="La tour de Pierre" class="img-responsive" />
-							<h4>La tour de Pierre</h4>
-								<p>Stand B4</p>
-						</div>
-					</div>
-					<hr class="subsection-divider">
-					<!-- Beaujolais -->
-					<h4>Beaujolais</h4>
-					<div class="row">
-						<div class="col-md-4 text-center">
-							<img src="../assets/img/exposants/exposant11.png" alt="Montchanay" class="img-responsive" />
-							<h4>Montchanay</h4>
-								<p>Stand D1</p>
-						</div>
-					</div>
-					<hr class="subsection-divider">
-					<!-- Languedoc-Roussillon -->
-					<h4>Languedoc-Roussillon</h4>
-					<div class="row">
-						<div class="col-md-4 text-center">
-							<img src="../assets/img/exposants/exposant12.png" alt="Chateau Aiguilloux" class="img-responsive" />
-							<h4>Chateau Aiguilloux</h4>
-								<p>Stand A5</p>
-						</div>
-					</div>
-                    <hr class="subsection-divider">
-                    <h4>Jura</h4>
-                    <div class="row">
-						<div class="col-md-4 text-center">
-							<img src="../assets/img/exposants/exposant18.png" alt="Ferme Ekoto" class="img-responsive" />
-							<h4>Ferme Ekoto</h4>
-							<p>Jura - Stand C2</p>
+						
+						<!-- Onglet Autres produits -->
+						<div role="tabpanel" class="tab-pane" id="autres">
+							<div class="row">
+								<div class="col-md-12">
+									<h3 class="section-title">Autres produits délicieux</h3>
+									<hr class="section-divider">
+									<div class="row">
+										<div class="col-md-4 text-center">
+											<img src="../assets/img/exposants/exposant19.png" alt="Mada Vanille" class="img-responsive" />
+											<h4>Mada Vanille</h4>
+											<p>Madagascar - Vanille - Stand D2</p>
+										</div>
+										<div class="col-md-4 text-center">
+											<img src="../assets/img/exposants/exposant20.png" alt="JSP" class="img-responsive" />
+											<h4>JSP</h4>
+											<p>Chataignes - Stand C1</p>
+										</div>
+										<div class="col-md-4 text-center">
+											<img src="../assets/img/exposants/exposant21.png" alt="Jackel Enzo" class="img-responsive" />
+											<h4>Jackel Enzo</h4>
+											<p>Tarn - Pâtes de fruit - Stand D6</p>
+										</div>
+										<div class="col-md-4 text-center">
+											<img src="../assets/img/exposants/exposant17.png" alt="Domaine la Péquélette" class="img-responsive" />
+											<h4>Domaine la Péquélette</h4>
+											<p>Huile - Rhône (Vinsobres) - Stand B5</p>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-                <hr class="section-divider">
-				<div class="col-md-12">
-					<h3 class="section-title">Champagne</h3>
-					<hr class="section-divider">
-					<div class="row">
-						<div class="col-md-4 text-center">
-							<img src="../assets/img/exposants/exposant15.png" alt="Masse fils liebart" class="img-responsive" />
-							<h4>Masse fils liebart</h4>
-							<p>Champagne - Stand B3</p>
-						</div>
-						<div class="col-md-4 text-center">
-							<img src="../assets/img/exposants/exposant16.png" alt="Dame des Agis" class="img-responsive" />
-							<h4>Dame des Agis</h4>
-							<p>Champagne - Stand A6</p>
-						</div>
-					</div>
-				</div>
-				<hr class="section-divider">
-				<div class="col-md-12">
-					<h3 class="section-title">Viande et charcuterie</h3>
-					<hr class="section-divider">
-					<div class="row">
-						<div class="col-md-4 text-center">
-							<img src="../assets/img/exposants/exposant18.png" alt="Ferme Ekoto" class="img-responsive" />
-							<h4>Ferme Ekoto</h4>
-							<p>Jura - Stand C2</p>
-						</div>
-                        <div class="col-md-4 text-center">
-							<img src="../assets/img/exposants/exposant13.avif" alt="Gourmet du Jura" class="img-responsive" />
-							<h4>Gourmet du Jura</h4>
-							<p>Jura - Stand C4</p>
-						</div>
-					</div>
-				</div>
-				<hr class="section-divider">
-				<div class="col-md-12">
-					<h3 class="section-title">Fromage</h3>
-					<hr class="section-divider">
-					<div class="row">
-						<div class="col-md-4 text-center">
-							<img src="../assets/img/exposants/exposant13.avif" alt="Gourmet du Jura" class="img-responsive" />
-							<h4>Gourmet du Jura</h4>
-							<p>Jura - Stand C4</p>
-						</div>
-						<!-- ...autres exposants pour "Fromage et Charcuterie"... -->
-					</div>
-				</div>
-				<hr class="section-divider">
-				<div class="col-md-12">
-					<h3 class="section-title">Alcools forts</h3>
-					<hr class="section-divider">
-					<div class="row">
-						<div class="col-md-4 text-center">
-							<img src="../assets/img/exposants/exposant14.png" alt="Distilleries des scories" class="img-responsive" />
-							<h4>Distilleries des scories</h4>
-							<p>Liqueurs - Auvergne - En vacance, attendre la semaine prochaine</p>
-						</div>
-                        <div class="col-md-4 text-center">
-							<img src="../assets/img/exposants/exposant22.png" alt="Rhum Kodiak" class="img-responsive" />
-							<h4>Rhum Kodiak</h4>
-							<p>Rhum arrangé - Stand D5</p>
-						</div>
-					</div>
-				</div>
-                <hr class="section-divider">
-                <div class="col-md-12">
-					<h3 class="section-title">Autres produits délicieux</h3>
-					<hr class="section-divider">
-					<div class="row">
-                        <div class="col-md-4 text-center">
-                            <img src="../assets/img/exposants/exposant19.png" alt="Mada Vanille" class="img-responsive" />
-                            <h4>Mada Vanille</h4>
-                            <p>Madagascar - Vanille - Stand D2</p>
-                        </div>
-                        <div class="col-md-4 text-center">
-                            <img src="../assets/img/exposants/exposant20.png" alt="JSP" class="img-responsive" />
-                            <h4>JSP</h4>
-                            <p>Chataignes - Stand C1</p>
-                        </div>
-                        <div class="col-md-4 text-center">
-                            <img src="../assets/img/exposants/exposant21.png" alt="Jackel Enzo" class="img-responsive" />
-                            <h4>Jackel Enzo</h4>
-                            <p>Tarn - Pâtes de fruit - Stand D6</p>
-                        </div>
-                        <div class="col-md-4 text-center">
-							<img src="../assets/img/exposants/exposant17.png" alt="Domaine la Péquélette" class="img-responsive" />
-							<h4>Domaine la Péquélette</h4>
-							<p>Huile - Rhône (Vinsobres) - Stand B5</p>
-						</div>
-                        </div>
-					</div>
-				</div>
-				<!-- ...autres catégories de produits... -->
 			</div>
 		</div>
 	</section>
