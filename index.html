@@ -7,18 +7,23 @@
 <meta name="description" content="" />
 <meta name="author" content="Arthur Evain" />
 <!-- css -->
-<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-<link href="assets/css/fancybox/jquery.fancybox.css" rel="stylesheet">
-<link href="assets/css/jcarousel.css" rel="stylesheet" />
-<link href="assets/css/flexslider.css" rel="stylesheet" />
-<link href="assets/js/owl-carousel/owl.carousel.css" rel="stylesheet"> 
-<link href="assets/css/style.css" rel="stylesheet" />
+<link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+<link href="./assets/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+<link href="./assets/css/jcarousel.css" rel="stylesheet" />
+<link href="./assets/css/flexslider.css" rel="stylesheet" />
+<link href="./assets/js/owl-carousel/owl.carousel.css" rel="stylesheet"> 
+<link href="./assets/css/style.css" rel="stylesheet" />
  
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
+<style>
+    /* Masquer les indicateurs de pagination du carrousel */
+    .flex-control-nav {
+        display: none !important;
+    }
+</style>
 </head>
 <body>
 <div id="wrapper">
@@ -32,12 +37,12 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-					<a class="navbar-brand" href="index.html"><img src="../assets/img/logo_SDT.png" alt="logo" style="height: 120px; margin-top: -37px;"/></a>
+					<a class="navbar-brand" href="index.html"><img src="./assets/img/logo_SDT.png" alt="logo" style="height: 120px; margin-top: -37px;"/></a>
                 </div>
                 <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.html">Accueil</a></li> 
-                        <li><a href="https://www.helloasso.com/associations/salon-du-terroir/evenements/billetterie-salon-2025">Billeterie</a></li>
+                        <li><a href="https://www.helloasso.com/associations/salon-du-terroir/evenements/billetterie-salon-2025">Billetterie</a></li>
                         <li><a href="pages/exposants.html">Exposants</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
@@ -46,24 +51,26 @@
         </div>
 	</header>
 	<!-- end header -->
-	<section id="featured">
-    
+
 
 
 	<section class="callaction">
 		<div class="container">
 			<div class="row">
 				<div style="text-align: center"><h1><span>Prenez votre billet pour le Salon du Terroir !</h1><span class="clear spacer_responsive_hide_mobile " style="height:13px;display:block;"></span>
-					<div style="text-align: center; margin-top: 30px;">
+					<div style="text-align: center; margin-top: -10px;">
 						<a href="https://www.helloasso.com/associations/salon-du-terroir/evenements/billetterie-salon-2025" class="btn btn-lg" style="font-size: 1.5rem; padding: 15px 30px; background: linear-gradient(to right, #337ab7, #5bc0de); color: white; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); border: none; transition: all 0.3s ease;">
-							<i class="fa fa-ticket" style="margin-right: 10px;"></i>Prendre mon billet
+							<i class="fa fa-ticket" style="margin-right: 10px;"></i><strong>Prendre mon billet</strong>
 						</a>
 					</div>					
 				</div>
 			</div>
 		</div>
 	</section>
+
+
 	<!-- Slider -->
+	<section id="featured">
         <div id="main-slider" class="flexslider">
             <ul class="slides">
               <li>
@@ -73,7 +80,7 @@
 				<div class="col-md-12">
                 <div class="flex-caption">
                     <h3>Un accès direct au terroir français</h3> 
-					<p>Les visiteurs auront l'opportunité d'être en contact direct avec des <b>producteurs locaux</b>.</p>
+					<p>Les visiteurs auront l'opportunité d'être en contact direct avec des <b>producteurs de toute la France</b>.</p>
                 </div>
 				</div></div></div>
               </li>
@@ -102,8 +109,8 @@
             </ul>
         </div>
 	<!-- end slider -->
- 
 	</section>
+
 	<section class="callaction">
 	<div class="container">
 		<div class="row">
@@ -111,8 +118,17 @@
 		<img src="assets/img/Logo_Télécom_ParisTech.svg (1).png" alt="" width="100%"/>
 		</div>
 			<div class="col-md-8">
-				<div><h1><span>Salon du Terroir</h1><span class="clear spacer_responsive_hide_mobile " style="height:13px;display:block;"></span><p>Un évènement par Télécom Paris pour amener les produits du terroir français à proximité des résidents du Plateau de Saclay.</p>
-				<p>Venez découvrir des producteurs de vin, fromage, charcuterie, cidre, miel, huile...</p>
+				<div>
+					<h1>Salon du Terroir</h1>
+					<span class="clear spacer_responsive_hide_mobile" style="height:13px;display:block;"></span>
+					<p>Un événement organisé par le <strong>Bureau du Terroir de Télécom Paris</strong> pour faire découvrir 
+						les produits du terroir français aux résidents du Plateau de Saclay.</p>
+					</div>
+					<p class="highlight-text" style="font-size: 1.1em; margin-top: 15px;">
+						Venez découvrir des producteurs de <strong>vin</strong>, 
+						<strong>fromage</strong>, <strong>charcuterie</strong>, 
+						<strong>miel</strong>, <strong>huile</strong>...
+					</p>
 				</div>
 			</div>
 		</div>
@@ -135,14 +151,14 @@
                 <i class="icon-info-blocks fa fa-calendar"></i>
                 <div class="info-blocks-in">
                     <h3>Date</h3>
-                    <p>Vendredi 22 et Samedi 23 Mai 2025</p>
+                    <p>Vendredi 23 et Samedi 24 Mai 2025</p>
                 </div>
             </div>
             <div class="col-sm-4 info-blocks">
                 <i class="icon-info-blocks fa fa-clock-o"></i>
                 <div class="info-blocks-in">
                     <h3>Horaires</h3>
-                    <p>De 14h à 19h le vendredi 22 mai 2025<br>De 10h à 19h le samedi 23 mai 2025</p>
+                    <p>De 14h à 19h le vendredi 23 mai 2025<br>De 10h à 19h le samedi 24 mai 2025</p>
                 </div>
             </div>
         </div>
@@ -151,14 +167,14 @@
                 <i class="icon-info-blocks fa fa-money"></i>
                 <div class="info-blocks-in">
                     <h3>Tarif</h3>
-                    <p>3€ pour les télécommiens<br>5€ pour les extérieurs</p>
+                    <p>1€ pour les Télécom (étudiants et personnel)<br>2€ pour les extérieurs</p>
                 </div>
             </div>
             <div class="col-sm-4 info-blocks">
                 <i class="icon-info-blocks fa fa-group"></i>
                 <div class="info-blocks-in">
                     <h3>Effectif</h3>
-                    <p>40 exposants, dont 25 vignerons</p>
+                    <p>22 exposants</p>
                 </div>
             </div>
             <div class="col-sm-4 info-blocks">
@@ -216,9 +232,8 @@
 				</div>
 				<div class="col-lg-6">
 					<ul class="social-network">
-						<li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="#" data-placement="top" title="Instagram"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="https://www.facebook.com/people/Salon-du-Terroir-de-T%C3%A9l%C3%A9com-Paris/61573724585351/?rdid=p7S9MkopBY7Xibjp&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F16Sbx7byDy%2F" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="https://www.instagram.com/salonduterroir?igsh=MWNtdHF4c3Rxbng4cg==" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a></li>
 					</ul>
 				</div>
 			</div>

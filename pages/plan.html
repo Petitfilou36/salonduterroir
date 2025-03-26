@@ -14,6 +14,8 @@
     <link href="../assets/css/jcarousel.css" rel="stylesheet" />
     <link href="../assets/css/flexslider.css" rel="stylesheet" />
     <link href="../assets/js/owl-carousel/owl.carousel.css" rel="stylesheet"> 
+    <script src="../assets/js/plan-editor.js"></script>
+
     
     <style>
         .map-container {
@@ -83,7 +85,7 @@
                 <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
                         <li><a href="../index.html">Accueil</a></li> 
-                        <li><a href="https://www.helloasso.com/associations/salon-du-terroir/evenements/billetterie-salon-2025">Billeterie</a></li>
+                        <li><a href="https://www.helloasso.com/associations/salon-du-terroir/evenements/billetterie-salon-2025">Billetterie</a></li>
                         <li><a href="exposants.html">Exposants</a></li>
                         <li class="active"><a href="plan.html">Plan</a></li>
                         <li><a href="../contact.html">Contact</a></li>
@@ -196,71 +198,337 @@
     document.addEventListener('DOMContentLoaded', function() {
         // Liste des stands avec leurs données
         const stands = [
-            {
-                id: 1,
-                x: 10,  // Position en pourcentage par rapport à la largeur de l'image
-                y: 20,  // Position en pourcentage par rapport à la hauteur de l'image
-                width: 15,  // Largeur en pourcentage
-                height: 10, // Hauteur en pourcentage
-                nom: "Domaine des Coteaux",
-                categorie: "Vin",
-                region: "Bourgogne",
-                description: "Vins de Bourgogne, spécialités en Pinot Noir et Chardonnay.",
-                color: "#337ab7" // Couleur bleue pour les vins
-            },
-            {
-                id: 2,
-                x: 30,
-                y: 20,
-                width: 15,
-                height: 10,
-                nom: "La Fromagerie Alpine",
-                categorie: "Fromage",
-                region: "Savoie",
-                description: "Fromages de Savoie: Beaufort, Reblochon, Tome des Bauges.",
-                color: "#5cb85c" // Couleur verte pour les produits alimentaires
-            },
-            {
-                id: 3,
-                x: 50,
-                y: 20,
-                width: 15,
-                height: 10,
-                nom: "Charcuterie du Terroir",
-                categorie: "Charcuterie",
-                region: "Auvergne",
-                description: "Jambons, saucissons et pâtés traditionnels d'Auvergne.",
-                color: "#5cb85c"
-            },
-            {
-                id: 4,
-                x: 10,
-                y: 40,
-                width: 15,
-                height: 10,
-                nom: "Artisanat du Jura",
-                categorie: "Artisanat",
-                region: "Jura",
-                description: "Objets en bois sculptés à la main.",
-                color: "#f0ad4e" // Couleur orange pour l'artisanat
-            },
-            {
-                id: 5,
-                x: 30,
-                y: 40,
-                width: 15,
-                height: 10,
-                nom: "Vignobles de Loire",
-                categorie: "Vin",
-                region: "Val de Loire",
-                description: "Sancerre, Vouvray et autres vins de Loire.",
-                color: "#337ab7"
-            },
-            // Ajoutez d'autres stands selon vos besoins
-        ];
+    {
+        "id": 1,
+        "displayId": "A1",
+        "x": 82.92035398230081,
+        "y": 50.869035488015626,
+        "width": 6.336283185840708,
+        "height": 5.306277967303177,
+        "nom": "Domaine des Coteaux",
+        "categorie": "Vin",
+        "region": "Bourgogne",
+        "description": "Vins de Bourgogne, spécialités en Pinot Noir et Chardonnay.",
+        "color": "#337ab7"
+    },
+    {
+        "id": 2,
+        "displayId": "A2",
+        "x": 76.16283185840703,
+        "y": 50.869035488015626,
+        "width": 6.336283185840708,
+        "height": 5.306277967303177,
+        "nom": "Vignobles de Loire",
+        "categorie": "Vin",
+        "region": "Val de Loire",
+        "description": "Sancerre, Vouvray et autres vins de Loire.",
+        "color": "#337ab7"
+    },
+    {
+        "id": 3,
+        "displayId": "A3",
+        "x": 69.40530973451325,
+        "y": 50.869035488015626,
+        "width": 6.336283185840708,
+        "height": 5.306277967303177,
+        "nom": "La Fromagerie Alpine",
+        "categorie": "Fromage",
+        "region": "Savoie",
+        "description": "Fromages de Savoie: Beaufort, Reblochon, Tome des Bauges.",
+        "color": "#5cb85c"
+    },
+    {
+        "id": 4,
+        "displayId": "A4",
+        "x": 62.64778761061947,
+        "y": 50.869035488015626,
+        "width": 6.336283185840708,
+        "height": 5.306277967303177,
+        "nom": "Artisanat du Jura",
+        "categorie": "Artisanat",
+        "region": "Jura",
+        "description": "Objets en bois sculptés à la main.",
+        "color": "#f0ad4e"
+    },
+    {
+        "id": 5,
+        "displayId": "A5",
+        "x": 78.93805309734518,
+        "y": 63.77054627619505,
+        "width": 7.663716814159292,
+        "height": 5.5898276549554735,
+        "nom": "Délices de Provence",
+        "categorie": "Produits alimentaires",
+        "region": "Provence",
+        "description": "Huiles d'olive, tapenades et herbes de Provence.",
+        "color": "#5cb85c"
+    },
+    {
+        "id": 6,
+        "displayId": "A6",
+        "x": 67.03539823008849,
+        "y": 62.35279783793355,
+        "width": 7.663716814159292,
+        "height": 5.164503123477028,
+        "nom": "Champagne Dumont",
+        "categorie": "Vin",
+        "region": "Champagne",
+        "description": "Champagnes brut, rosé et millésimés.",
+        "color": "#337ab7"
+    },
+    {
+        "id": 7,
+        "displayId": "B1",
+        "x": 42.6991150442478,
+        "y": 53.25107438748823,
+        "width": 3.238938053097345,
+        "height": 9.98484781356608,
+        "nom": "Charcuterie Morvan",
+        "categorie": "Produits alimentaires",
+        "region": "Bourgogne",
+        "description": "Jambon persillé, saucissons et pâtés.",
+        "color": "#5cb85c"
+    },
+    {
+        "id": 8,
+        "displayId": "B2",
+        "x": 42.6991150442478,
+        "y": 43.75215985113639,
+        "width": 3.238938053097345,
+        "height": 9.98484781356608,
+        "nom": "Poterie d'Alsace",
+        "categorie": "Artisanat",
+        "region": "Alsace",
+        "description": "Poteries traditionnelles et céramiques décoratives.",
+        "color": "#f0ad4e"
+    },
+    {
+        "id": 9,
+        "displayId": "B3",
+        "x": 53.761061946902664,
+        "y": 41.90908688139645,
+        "width": 3.2389380530973444,
+        "height": 9.417748438261485,
+        "nom": "Miel de Montagne",
+        "categorie": "Produits alimentaires",
+        "region": "Pyrénées",
+        "description": "Miel de montagne, de châtaignier et de fleurs sauvages.",
+        "color": "#5cb85c"
+    },
+    {
+        "id": 10,
+        "displayId": "B4",
+        "x": 53.761061946902664,
+        "y": 32.55194718887067,
+        "width": 3.2389380530973444,
+        "height": 9.417748438261485,
+        "nom": "Vins du Sud-Ouest",
+        "categorie": "Vin",
+        "region": "Sud-Ouest",
+        "description": "Cahors, Madiran et vins de pays.",
+        "color": "#337ab7"
+    },
+    {
+        "id": 11,
+        "displayId": "B5",
+        "x": 43.982300884955706,
+        "y": 32.268397501218374,
+        "width": 7.92920353982301,
+        "height": 4.172079216693988,
+        "nom": "Biscuiterie Bretonne",
+        "categorie": "Produits alimentaires",
+        "region": "Bretagne",
+        "description": "Galettes, palets et kouign-amann.",
+        "color": "#5cb85c"
+    },
+    {
+        "id": 12,
+        "displayId": "B6",
+        "x": 35.88495575221237,
+        "y": 32.268397501218374,
+        "width": 7.92920353982301,
+        "height": 4.172079216693988,
+        "nom": "Maroquinerie d'Art",
+        "categorie": "Artisanat",
+        "region": "Auvergne",
+        "description": "Sacs, portefeuilles et ceintures en cuir.",
+        "color": "#f0ad4e"
+    },
+    {
+        "id": 13,
+        "displayId": "C1",
+        "x": 30.17699115044252,
+        "y": 14.801958265030361,
+        "width": 3.4159292035398225,
+        "height": 9.701298125913782,
+        "nom": "Fromages des Alpes",
+        "categorie": "Fromage",
+        "region": "Alpes",
+        "description": "Beaufort, Abondance et Emmental de Savoie.",
+        "color": "#5cb85c"
+    },
+    {
+        "id": 14,
+        "displayId": "C2",
+        "x": 30.17699115044252,
+        "y": 5.303043728678383,
+        "width": 3.4159292035398225,
+        "height": 9.701298125913782,
+        "nom": "Vignoble du Languedoc",
+        "categorie": "Vin",
+        "region": "Languedoc",
+        "description": "Vins AOC du Languedoc et vins de pays.",
+        "color": "#337ab7"
+    },
+    {
+        "id": 15,
+        "displayId": "C3",
+        "x": 35.57522123893805,
+        "y": 4.168844978069235,
+        "width": 6.070796460176991,
+        "height": 5.022728279650879,
+        "nom": "Bijoux Artisanaux",
+        "categorie": "Artisanat",
+        "region": "Centre-Val de Loire",
+        "description": "Bijoux faits main en argent et pierres semi-précieuses.",
+        "color": "#f0ad4e"
+    },
+    {
+        "id": 25,
+        "displayId": "C5",
+        "x": 39.99115044247793,
+        "y": 19.055203579814908,
+        "width": 7.575221238938053,
+        "height": 5.306277967303177,
+        "nom": "Confitures Traditionnelles",
+        "categorie": "Produits alimentaires",
+        "region": "Lorraine",
+        "description": "Confitures et gelées aux fruits de saison.",
+        "color": "#5cb85c"
+    },
+    {
+        "id": 16,
+        "displayId": "C4",
+        "x": 42.123893805309756,
+        "y": 4.168844978069235,
+        "width": 6.070796460176991,
+        "height": 5.022728279650879,
+        "nom": "Confitures Traditionnelles",
+        "categorie": "Produits alimentaires",
+        "region": "Lorraine",
+        "description": "Confitures et gelées aux fruits de saison.",
+        "color": "#5cb85c"
+    },
+    {
+        "id": 17,
+        "displayId": "D1",
+        "x": 33.893805309734496,
+        "y": 45.53896592973287,
+        "width": 3.185840707964601,
+        "height": 9.417748438261485,
+        "nom": "Château Bordeaux",
+        "categorie": "Vin",
+        "region": "Bordeaux",
+        "description": "Grands crus et vins de château.",
+        "color": "#337ab7"
+    },
+    {
+        "id": 18,
+        "displayId": "D2",
+        "x": 24.38938053097348,
+        "y": 56.455628904346256,
+        "width": 3.185840707964602,
+        "height": 10.268397501218379,
+        "nom": "Foie Gras du Périgord",
+        "categorie": "Produits alimentaires",
+        "region": "Périgord",
+        "description": "Foie gras, confits et terrines.",
+        "color": "#5cb85c"
+    },
+    {
+        "id": 19,
+        "displayId": "D3",
+        "x": 33.893805309734496,
+        "y": 55.46320499756324,
+        "width": 3.274336283185841,
+        "height": 9.843072969739932,
+        "nom": "Savons de Marseille",
+        "categorie": "Artisanat",
+        "region": "Provence",
+        "description": "Savons naturels et huiles essentielles.",
+        "color": "#f0ad4e"
+    },
+    {
+        "id": 20,
+        "displayId": "D4",
+        "x": 37.32743362831853,
+        "y": 64.53679500243676,
+        "width": 6.106194690265487,
+        "height": 5.022728279650879,
+        "nom": "Cidre Normand",
+        "categorie": "Boisson",
+        "region": "Normandie",
+        "description": "Cidres, poirés et calvados.",
+        "color": "#337ab7"
+    },
+    {
+        "id": 21,
+        "displayId": "D5",
+        "x": 17.026548672566395,
+        "y": 71.34198750609193,
+        "width": 6.548672566371682,
+        "height": 4.880953435824731,
+        "nom": "Tissage Traditionnel",
+        "categorie": "Artisanat",
+        "region": "Ardèche",
+        "description": "Tissus et linge de maison en fibres naturelles.",
+        "color": "#f0ad4e"
+    },
+    {
+        "id": 22,
+        "displayId": "D6",
+        "x": 36.81415929203543,
+        "y": 75.87878250852862,
+        "width": 4.601769911504425,
+        "height": 7.716450312347702,
+        "nom": "Spécialités Corses",
+        "categorie": "Produits alimentaires",
+        "region": "Corse",
+        "description": "Charcuteries, fromages et liqueurs corses.",
+        "color": "#5cb85c"
+    },
+    {
+        "id": 23,
+        "displayId": "D7",
+        "x": 10.31858407079638,
+        "y": 71.34198750609139,
+        "width": 6.106194690265486,
+        "height": 4.880953435824731,
+        "nom": "Vins de Chablis",
+        "categorie": "Vin",
+        "region": "Bourgogne",
+        "description": "Chablis, Petit Chablis et Grand Cru.",
+        "color": "#337ab7"
+    },
+    {
+        "id": 24,
+        "displayId": "D8",
+        "x": 3.6460176991150623,
+        "y": 71.34198750609177,
+        "width": 6.106194690265487,
+        "height": 4.88095343582473,
+        "nom": "Chocolaterie Artisanale",
+        "categorie": "Produits alimentaires",
+        "region": "Rhône-Alpes",
+        "description": "Chocolats fins, pralinés et ganaches.",
+        "color": "#5cb85c"
+    }
+];
 
         const mapContainer = document.querySelector('.map-container');
         const tooltip = document.getElementById('tooltip');
+
+        
 
         // Créer les rectangles des stands
         stands.forEach(stand => {
@@ -280,7 +548,7 @@
             standElement.dataset.region = stand.region;
             standElement.dataset.description = stand.description;
             
-            standElement.innerHTML = `<span style="display: flex; justify-content: center; align-items: center; height: 100%; color: white; font-weight: bold;">${stand.id}</span>`;
+            standElement.innerHTML = `<span style="display: flex; justify-content: center; align-items: center; height: 100%; color: white; font-weight: bold;">${stand.displayId}</span>`;
             
             mapContainer.appendChild(standElement);
             
@@ -296,19 +564,70 @@
                     <p>${this.dataset.description}</p>
                 `;
                 
-                // Positionnement du tooltip
-                const tooltipX = rect.left - mapRect.left + rect.width + 10;
-                const tooltipY = rect.top - mapRect.top;
+                // Positionner le tooltip hors de la vue pendant le calcul des dimensions
+                tooltip.style.opacity = '0';
+                tooltip.style.visibility = 'hidden'; 
+                tooltip.style.left = '-9999px';
+                tooltip.style.top = '-9999px';
                 
-                tooltip.style.left = `${tooltipX}px`;
-                tooltip.style.top = `${tooltipY}px`;
-                tooltip.style.opacity = '1';
+                // Attendre un court instant pour que le DOM soit mis à jour
+                setTimeout(() => {
+                    // Obtenir les dimensions du tooltip
+                    const tooltipRect = tooltip.getBoundingClientRect();
+                    
+                    // Calculer la position idéale
+                    let tooltipX = rect.left - mapRect.left + rect.width + 10; // Position à droite par défaut
+                    let tooltipY = rect.top - mapRect.top;
+                    
+                    // Vérifier si le tooltip dépasse à droite
+                    if (tooltipX + tooltipRect.width > mapRect.width) {
+                        // Positionner à gauche du stand à la place
+                        tooltipX = rect.left - mapRect.left - tooltipRect.width - 10;
+                        
+                        // Si ça ne fonctionne toujours pas (trop à gauche), centrer au-dessus ou en-dessous
+                        if (tooltipX < 0) {
+                            tooltipX = Math.max(0, rect.left - mapRect.left + (rect.width / 2) - (tooltipRect.width / 2));
+                            // Positionner au-dessus ou en-dessous selon l'espace disponible
+                            if (rect.top - mapRect.top - tooltipRect.height - 10 > 0) {
+                                tooltipY = rect.top - mapRect.top - tooltipRect.height - 10; // au-dessus
+                            } else {
+                                tooltipY = rect.top - mapRect.top + rect.height + 10; // en-dessous
+                            }
+                        }
+                    }
+                    
+                    // Vérifier si le tooltip dépasse en bas
+                    if (tooltipY + tooltipRect.height > mapRect.height) {
+                        tooltipY = Math.max(0, mapRect.height - tooltipRect.height);
+                    }
+                    
+                    // Vérifier si le tooltip dépasse en haut
+                    if (tooltipY < 0) {
+                        tooltipY = 0;
+                    }
+                    
+                    // Appliquer la position calculée et rendre visible
+                    tooltip.style.left = `${tooltipX}px`;
+                    tooltip.style.top = `${tooltipY}px`;
+                    tooltip.style.visibility = 'visible'; // D'abord rendre visible
+                    tooltip.style.opacity = '1'; // Puis activer l'opacité pour la transition
+                }, 10);
             });
             
             standElement.addEventListener('mouseleave', function() {
                 tooltip.style.opacity = '0';
+                // Cacher complètement après la fin de la transition d'opacité
+                setTimeout(() => {
+                    if (tooltip.style.opacity === '0') {
+                        tooltip.style.visibility = 'hidden';
+                    }
+                }, 300);
             });
         });
+        // Initialiser l'éditeur de plan
+
+        const editor = new PlanEditor(stands, mapContainer, tooltip);
+
     });
 </script>
 </body>
