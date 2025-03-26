@@ -61,6 +61,25 @@
             border-radius: 5px;
             border: 1px solid #eee;
         }
+        
+        /* Ajustements pour le logo sur mobile */
+        @media (max-width: 767px) {
+            .navbar-brand img {
+                height: 90px !important;
+                margin-top: -25px !important;
+            }
+            .navbar-header {
+                height: 70px;
+            }
+        }
+        
+        /* Pour les très petits écrans */
+        @media (max-width: 480px) {
+            .navbar-brand img {
+                height: 75x !important;
+                margin-top: -28px !important;
+            }
+        }
     </style>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->

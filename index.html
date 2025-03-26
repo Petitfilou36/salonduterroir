@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="" />
 <meta name="author" content="Le boss du pôle WEB" />
+<link rel="icon" href="./assets/img/logo_SDT.png" type="image/png">
 <!-- css -->
 <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
 <link href="./assets/css/fancybox/jquery.fancybox.css" rel="stylesheet">
@@ -23,6 +24,25 @@
     .flex-control-nav {
         display: none !important;
     }
+
+	        /* Ajustements pour le logo sur mobile */
+			@media (max-width: 767px) {
+            .navbar-brand img {
+                height: 90px !important;
+                margin-top: -25px !important;
+            }
+            .navbar-header {
+                height: 70px;
+            }
+        }
+        
+        /* Pour les très petits écrans */
+        @media (max-width: 480px) {
+            .navbar-brand img {
+                height: 75x !important;
+                margin-top: -28px !important;
+            }
+        }
 </style>
 </head>
 <body>
@@ -45,7 +65,7 @@
                         <li><a href="https://www.helloasso.com/associations/salon-du-terroir/evenements/billetterie-salon-2025">Billetterie</a></li>
                         <li><a href="pages/exposants.html">Exposants</a></li>
                         <li><a href="pages/plan.html">Plan</a></li>
-                        <li><a href="pages/">Contact</a></li>
+                        <li><a href="pages/contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -126,7 +146,7 @@
 						les produits du terroir français aux résidents du Plateau de Saclay.</p>
 					</div>
 					<p class="highlight-text" style="font-size: 1.1em; margin-top: 15px;">
-						Venez découvrir des producteurs de <strong>vin</strong>, 
+						Venez découvrir des producteurs de <strong>vin</strong>, <strong>champagne</strong>
 						<strong>fromage</strong>, <strong>charcuterie</strong>, 
 						<strong>miel</strong>, <strong>huile</strong>...
 					</p>

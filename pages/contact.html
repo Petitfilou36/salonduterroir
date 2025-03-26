@@ -12,6 +12,8 @@
 <link href="../assets/css/jcarousel.css" rel="stylesheet" />
 <link href="../assets/css/flexslider.css" rel="stylesheet" />
 <link href="../assets/css/style.css" rel="stylesheet" />
+<script src="https://kit.fontawesome.com/0b67616674.js" crossorigin="anonymous"></script>
+
  
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
@@ -61,7 +63,9 @@
 		<div class="col-md-12">
 								</div>
 	</div>
+	
 	<div class="row">
+		
 		<div class="col-md-6">
 			<div class="contact-form">
 				<form id="contact-form" action="submit_form.php" method="post" role="form" novalidate="novalidate">
@@ -80,19 +84,23 @@
 						<textarea class="form-control" rows="6" id="message" name="message" placeholder=""></textarea>
 						<i class="fa fa-pencil form-control-feedback"></i>
 					</div>
-					<input type="submit" value="Envoyer" class="btn btn-default">
+					<div class="form-group text-center">
+						<button type="submit" class="btn btn-primary btn-lg" style="background-color: #4E7648; border-color: #4E7648; padding: 10px 30px; border-radius: 5px; transition: all 0.3s;">
+							<i class="fa fa-paper-plane"></i> Envoyer
+						</button>
+					</div></div>
 				</form>
 			</div>
-		</div>
-		<div class="col-md-6">  
-					<p>Veuillez remplir ce formulaire pour toute demande.</p>
-								<br/>
-					<p><b>Votre message sera traité dans les plus brefs délais.</b></p>
-								<br/>
-					<p>Téléphone: +33 7 72 29 99 76<br>
-			E-mail: arthur.evain@telecom-paris.fr</p>
-								</div>
-							</div>
+			<div class="col-md-6">  
+				<p>Veuillez remplir ce formulaire pour toute demande.</p>
+							<br/>
+				<p><b>Votre message sera traité dans les plus brefs délais.</b></p>
+							<br/>
+				<p>Téléphone: +33 7 72 29 99 76<br>
+		E-mail: arthur.evain@telecom-paris.fr</p>
+			</div>
+	</div>
+	</div>
 	</div>
  
 	</section>
@@ -145,6 +153,25 @@
 	</footer>
 
 	<style>
+		    /* Styles personnalisés */
+        /* Ajustements pour le logo sur mobile */
+        @media (max-width: 767px) {
+            .navbar-brand img {
+                height: 90px !important;
+                margin-top: -25px !important;
+            }
+            .navbar-header {
+                height: 70px;
+            }
+        }
+        
+        /* Pour les très petits écrans */
+        @media (max-width: 480px) {
+            .navbar-brand img {
+                height: 75x !important;
+                margin-top: -28px !important;
+            }
+        }
 		html, body {
 			height: 100%;
 			margin: 0;

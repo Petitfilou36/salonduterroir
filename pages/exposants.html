@@ -15,6 +15,24 @@
 <link href="../assets/css/style.css" rel="stylesheet" />
 <style>
     /* Styles personnalisés */
+        /* Ajustements pour le logo sur mobile */
+        @media (max-width: 767px) {
+            .navbar-brand img {
+                height: 90px !important;
+                margin-top: -25px !important;
+            }
+            .navbar-header {
+                height: 70px;
+            }
+        }
+        
+        /* Pour les très petits écrans */
+        @media (max-width: 480px) {
+            .navbar-brand img {
+                height: 75x !important;
+                margin-top: -28px !important;
+            }
+        }
     body {
         font-family: 'Arial', sans-serif;
         background-color: #f8f9fa;
