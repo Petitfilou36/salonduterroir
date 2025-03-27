@@ -71,14 +71,59 @@
             .navbar-header {
                 height: 70px;
             }
+            .stand-rect {
+                border-width: 1px;
+            }
+            .stand-tooltip {
+                min-width: 150px;
+                max-width: 80%;
+                font-size: 14px;
+            }
+            .active-stand {
+                background-color: rgba(51, 122, 183, 0.6) !important;
+                box-shadow: 0 0 15px rgba(51, 122, 183, 0.8);
+                z-index: 15;
+            }
+            .desktop-only {
+                display: none;
+            }
+            .mobile-only {
+                display: inline;
+            }
         }
         
         /* Pour les très petits écrans */
         @media (max-width: 480px) {
             .navbar-brand img {
-                height: 75x !important;
+                height: 75px !important;
                 margin-top: -28px !important;
             }
+            .stand-tooltip {
+                max-width: 90%;
+            }
+        }
+        
+        /* Pour les écrans non-mobiles */
+        @media (min-width: 768px) {
+            .desktop-only {
+                display: inline;
+            }
+            .mobile-only {
+                display: none;
+            }
+        }
+        
+        .close-tooltip {
+            position: absolute;
+            top: 2px;
+            right: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            color: #999;
+        }
+        
+        .close-tooltip:hover {
+            color: #333;
         }
     </style>
 
@@ -120,7 +165,8 @@
 			<div class="row">
 				<div style="text-align: center"><h1><span>Plan intéractif du Salon du Terroir</h1><span class="clear spacer_responsive_hide_mobile " style="height:13px;display:block;"></span>
 					<div style="text-align: center; margin-top: -10px;">
-						Passez votre souris sur les stands pour plus d'informations.
+						<span class="desktop-only">Passez votre souris sur les stands pour plus d'informations.</span>
+						<span class="mobile-only">Touchez les stands pour plus d'informations.</span>
 					</div>					
 				</div>
 			</div>
@@ -563,8 +609,50 @@
 
         const mapContainer = document.querySelector('.map-container');
         const tooltip = document.getElementById('tooltip');
+        let activeStand = null;
+        let isMobile = window.innerWidth < 768;
 
-        
+        // Ajouter un bouton de fermeture au tooltip pour mobile
+        const closeButton = document.createElement('span');
+        closeButton.innerHTML = '&times;';
+        closeButton.className = 'close-tooltip';
+        closeButton.style.display = 'none';
+        tooltip.appendChild(closeButton);
+
+        closeButton.addEventListener('click', function() {
+            hideTooltip();
+        });
+
+        // Fonction pour masquer le tooltip
+        function hideTooltip() {
+            tooltip.style.opacity = '0';
+            if (activeStand) {
+                activeStand.classList.remove('active-stand');
+                activeStand = null;
+            }
+            // Cacher complètement après la fin de la transition d'opacité
+            setTimeout(() => {
+                if (tooltip.style.opacity === '0') {
+                    tooltip.style.visibility = 'hidden';
+                    closeButton.style.display = 'none';
+                }
+            }, 300);
+        }
+
+        // Gestion des clics en dehors des stands pour fermer le tooltip sur mobile
+        document.addEventListener('click', function(e) {
+            if (isMobile && activeStand) {
+                // Vérifier si le clic est en dehors d'un stand et du tooltip
+                if (!e.target.closest('.stand-rect') && !e.target.closest('.stand-tooltip')) {
+                    hideTooltip();
+                }
+            }
+        });
+
+        // Adaptation lors du redimensionnement de la fenêtre
+        window.addEventListener('resize', function() {
+            isMobile = window.innerWidth < 768;
+        });
 
         // Créer les rectangles des stands
         stands.forEach(stand => {
@@ -588,17 +676,23 @@
             
             mapContainer.appendChild(standElement);
             
-            // Gestion des événements de survol
-            standElement.addEventListener('mouseenter', function(e) {
-                const rect = this.getBoundingClientRect();
+            // Fonction pour afficher le tooltip
+            function showTooltip(e) {
+                const rect = standElement.getBoundingClientRect();
                 const mapRect = mapContainer.getBoundingClientRect();
                 
                 tooltip.innerHTML = `
-                    <h4>${this.dataset.nom}</h4>
-                    <p><strong>Catégorie:</strong> ${this.dataset.categorie}</p>
-                    <p><strong>Région:</strong> ${this.dataset.region}</p>
-                    <p>${this.dataset.description}</p>
+                    <h4>${standElement.dataset.nom}</h4>
+                    <p><strong>Catégorie:</strong> ${standElement.dataset.categorie}</p>
+                    <p><strong>Région:</strong> ${standElement.dataset.region}</p>
+                    <p>${standElement.dataset.description}</p>
                 `;
+                
+                // Réajouter le bouton de fermeture qui a été écrasé
+                tooltip.appendChild(closeButton);
+                if (isMobile) {
+                    closeButton.style.display = 'block';
+                }
                 
                 // Positionner le tooltip hors de la vue pendant le calcul des dimensions
                 tooltip.style.opacity = '0';
@@ -615,19 +709,31 @@
                     let tooltipX = rect.left - mapRect.left + rect.width + 10; // Position à droite par défaut
                     let tooltipY = rect.top - mapRect.top;
                     
-                    // Vérifier si le tooltip dépasse à droite
-                    if (tooltipX + tooltipRect.width > mapRect.width) {
-                        // Positionner à gauche du stand à la place
-                        tooltipX = rect.left - mapRect.left - tooltipRect.width - 10;
+                    // Sur mobile, centrer le tooltip au-dessus ou en-dessous du stand
+                    if (isMobile) {
+                        tooltipX = Math.max(0, rect.left - mapRect.left + (rect.width / 2) - (tooltipRect.width / 2));
                         
-                        // Si ça ne fonctionne toujours pas (trop à gauche), centrer au-dessus ou en-dessous
-                        if (tooltipX < 0) {
-                            tooltipX = Math.max(0, rect.left - mapRect.left + (rect.width / 2) - (tooltipRect.width / 2));
-                            // Positionner au-dessus ou en-dessous selon l'espace disponible
-                            if (rect.top - mapRect.top - tooltipRect.height - 10 > 0) {
-                                tooltipY = rect.top - mapRect.top - tooltipRect.height - 10; // au-dessus
-                            } else {
-                                tooltipY = rect.top - mapRect.top + rect.height + 10; // en-dessous
+                        // Vérifier s'il y a assez d'espace au-dessus
+                        const spaceAbove = rect.top - mapRect.top;
+                        const spaceBelow = mapRect.height - (rect.top - mapRect.top + rect.height);
+                        
+                        if (spaceAbove > tooltipRect.height + 10 && spaceAbove > spaceBelow) {
+                            tooltipY = rect.top - mapRect.top - tooltipRect.height - 10; // au-dessus
+                        } else {
+                            tooltipY = rect.top - mapRect.top + rect.height + 10; // en-dessous
+                        }
+                    } else {
+                        // Comportement d'origine pour desktop
+                        if (tooltipX + tooltipRect.width > mapRect.width) {
+                            tooltipX = rect.left - mapRect.left - tooltipRect.width - 10;
+                            
+                            if (tooltipX < 0) {
+                                tooltipX = Math.max(0, rect.left - mapRect.left + (rect.width / 2) - (tooltipRect.width / 2));
+                                if (rect.top - mapRect.top - tooltipRect.height - 10 > 0) {
+                                    tooltipY = rect.top - mapRect.top - tooltipRect.height - 10; // au-dessus
+                                } else {
+                                    tooltipY = rect.top - mapRect.top + rect.height + 10; // en-dessous
+                                }
                             }
                         }
                     }
@@ -648,22 +754,45 @@
                     tooltip.style.visibility = 'visible'; // D'abord rendre visible
                     tooltip.style.opacity = '1'; // Puis activer l'opacité pour la transition
                 }, 10);
+            }
+
+            // Gestion des événements selon le type d'appareil
+            
+            // Événements pour ordinateurs (hover)
+            standElement.addEventListener('mouseenter', function(e) {
+                if (!isMobile) {
+                    showTooltip(e);
+                }
             });
             
             standElement.addEventListener('mouseleave', function() {
-                tooltip.style.opacity = '0';
-                // Cacher complètement après la fin de la transition d'opacité
-                setTimeout(() => {
-                    if (tooltip.style.opacity === '0') {
-                        tooltip.style.visibility = 'hidden';
+                if (!isMobile) {
+                    hideTooltip();
+                }
+            });
+            
+            // Événements pour appareils tactiles (click/tap)
+            standElement.addEventListener('click', function(e) {
+                if (isMobile) {
+                    e.stopPropagation();
+                    
+                    // Si un autre stand est actif, le désactiver
+                    if (activeStand && activeStand !== this) {
+                        activeStand.classList.remove('active-stand');
                     }
-                }, 300);
+                    
+                    // Activer ce stand
+                    this.classList.add('active-stand');
+                    activeStand = this;
+                    
+                    showTooltip(e);
+                }
             });
         });
         // Initialiser l'éditeur de plan
-
-        const editor = new PlanEditor(stands, mapContainer, tooltip);
-
+        if (typeof PlanEditor !== 'undefined') {
+            const editor = new PlanEditor(stands, mapContainer, tooltip);
+        }
     });
 </script>
 </body>
