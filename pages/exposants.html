@@ -89,6 +89,58 @@
         border-radius: 50%;
         padding: 10px;
     }
+
+    /* Améliorations pour mobile */
+    @media (max-width: 767px) {
+        .callaction h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .callaction div {
+            font-size: 14px;
+        }
+        
+        .col-md-4 {
+            margin-bottom: 25px;
+        }
+        
+        /* Meilleur affichage des images des exposants */
+        .text-center img {
+            max-width: 80%;
+            height: auto;
+            margin: 0 auto 15px;
+            display: block;
+        }
+        
+        /* Marges améliorées pour les sections */
+        .section-title {
+            font-size: 22px;
+            margin-top: 10px;
+        }
+        
+        h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        /* Plus d'espace pour les touch targets */
+        .subsection-divider {
+            margin: 20px 0;
+            padding-top: 5px;
+        }
+    }
+
+    /* Corrections pour très petits écrans */
+    @media (max-width: 480px) {
+        .callaction h1 {
+            font-size: 20px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+        }
+    }
 </style>
 <script src="https://kit.fontawesome.com/0b67616674.js" crossorigin="anonymous"></script>
 </head>
@@ -219,9 +271,63 @@
 							}
 							.custom-tabs > li > a {
 								border-radius: 4px;
+								padding: 15px;
+								text-align: left;
+								font-size: 16px;
+							}
+							.custom-tabs > li > a > i {
+								font-size: 18px;
+								width: 25px;
+								text-align: center;
+							}
+							
+							/* Amélioration du contraste et interaction */
+							.tab-content {
+								padding: 15px 10px;
+								border-radius: 4px;
+								background-color: #fff;
+								box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+							}
+							
+							/* Fix pour le problème de défilement horizontal */
+							.container {
+								padding-left: 10px;
+								padding-right: 10px;
+								width: 100%;
+							}
+							
+							/* Amélioration des transitions pour feedback */
+							.custom-tabs > li > a {
+								position: relative;
+								overflow: hidden;
+							}
+							
+							.custom-tabs > li > a:after {
+								content: '';
+								position: absolute;
+								height: 100%;
+								width: 0;
+								top: 0;
+								left: 0;
+								background-color: rgba(231, 76, 60, 0.1);
+								transition: width 0.3s ease;
+							}
+							
+							.custom-tabs > li > a:active:after {
+								width: 100%;
+							}
+							
+							/* Sticky tabs pour une navigation plus facile */
+							.nav-tabs {
+								position: -webkit-sticky;
+								position: sticky;
+								top: 0;
+								z-index: 100;
+								background-color: #f8f9fa;
+								padding: 10px 0 5px 0;
 							}
 						}
-					</style></li>
+					</style>
 
 					<!-- Contenu des onglets -->
 					<div class="tab-content">
@@ -548,5 +654,31 @@
 <script src="../assets/js/animate.js"></script>
 <script src="../assets/js/custom.js"></script>
 <script src="../assets/js/owl-carousel/owl.carousel.js"></script>
+
+<!-- Juste avant la fermeture de body, ajoutez ce script pour améliorer l'expérience mobile -->
+<script>
+$(document).ready(function() {
+    // Amélioration pour la navigation mobile
+    if ($(window).width() < 768) {
+        // Scroll doux quand on clique sur un onglet
+        $('.custom-tabs a').on('click', function(e) {
+            setTimeout(function() {
+                $('html, body').animate({
+                    scrollTop: $('.tab-content').offset().top - 70
+                }, 300);
+            }, 150);
+        });
+        
+        // Préchargement des images pour éviter les sauts de mise en page
+        $('img').each(function() {
+            var img = new Image();
+            img.src = $(this).attr('src');
+        });
+        
+        // Éviter le zoom sur le focus des éléments interactifs
+        $('meta[name="viewport"]').attr('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0');
+    }
+});
+</script>
 </body>
 </html>
