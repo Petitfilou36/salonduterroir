@@ -141,6 +141,48 @@
             font-size: 18px;
         }
     }
+    
+    /* Effets de survol pour les logos des exposants */
+    .text-center a {
+        display: block;
+        transition: all 0.3s ease;
+    }
+    
+    .text-center a img {
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+    }
+    
+    .text-center a:hover img {
+        transform: scale(1.05);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        border: 2px solid #e74c3c;
+    }
+    
+    /*.text-center a::before {
+        content: "Visiter le site";
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(231, 76, 60, 0.9);
+        color: white;
+        padding: 5px 15px;
+        border-radius: 4px;
+        font-weight: bold;
+        opacity: 0;
+        transition: all 0.3s ease;
+        z-index: 2;
+    }*/
+    
+    .text-center a {
+        position: relative;
+    }
+    
+    .text-center a:hover::before {
+        opacity: 1;
+        bottom: 20px;
+    }
 </style>
 <script src="https://kit.fontawesome.com/0b67616674.js" crossorigin="anonymous"></script>
 </head>
