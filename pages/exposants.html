@@ -144,13 +144,17 @@
     
     /* Effets de survol pour les logos des exposants */
     .text-center a {
-        display: block;
+        display: inline-block; /* Changé de 'block' à 'inline-block' pour limiter la largeur à l'image */
         transition: all 0.3s ease;
+        margin: 0 auto; /* Centrer le lien */
+        width: auto; /* Limiter la largeur au contenu */
     }
     
     .text-center a img {
         transition: all 0.3s ease;
         border: 2px solid transparent;
+        margin: 0 auto; /* Centrer l'image dans le lien */
+        display: block; /* Nécessaire pour que le margin auto fonctionne */
     }
     
     .text-center a:hover img {
