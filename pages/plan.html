@@ -2,6 +2,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script>
+    // Charger Google Analytics uniquement après consentement explicite
+    if (localStorage.getItem('cookiesAccepted')) {
+        var script = document.createElement('script');
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-WEE8R2EB7S';
+        script.async = true;
+        document.head.appendChild(script);
+
+        script.onload = function() {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-WEE8R2EB7S');
+        };
+    }
+</script>
     <meta charset="utf-8">
     <title>Plan du Salon du Terroir</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -257,6 +274,38 @@
         </div>
     </footer>
 </div>
+
+<!-- Ajout de la bannière de consentement RGPD -->
+<div id="cookie-banner" style="position: fixed; bottom: 0; width: 100%; background: #f8f9fa; padding: 15px; box-shadow: 0 -2px 5px rgba(0,0,0,0.1); text-align: center; z-index: 1000; display: none;">
+    <p style="margin: 0; font-size: 14px;">Nous utilisons des cookies pour améliorer votre expérience. En continuant, vous acceptez l'utilisation des cookies. <a href="./cookies.html" style="color: #007bff; text-decoration: underline;">En savoir plus</a></p>
+    <button id="accept-cookies" style="margin-left: 10px; padding: 5px 10px; background: #007bff; color: white; border: none; border-radius: 3px; cursor: pointer;">Accepter</button>
+</div>
+
+<script>
+    // Vérifier si l'utilisateur a déjà donné son consentement
+    if (!localStorage.getItem('cookiesAccepted')) {
+        document.getElementById('cookie-banner').style.display = 'block';
+    }
+
+    // Gérer le clic sur le bouton "Accepter"
+    document.getElementById('accept-cookies').addEventListener('click', function() {
+        localStorage.setItem('cookiesAccepted', 'true');
+        document.getElementById('cookie-banner').style.display = 'none';
+
+        // Charger Google Analytics après consentement
+        var script = document.createElement('script');
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-WEE8R2EB7S';
+        script.async = true;
+        document.head.appendChild(script);
+
+        script.onload = function() {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-WEE8R2EB7S');
+        };
+    });
+</script>
 <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
 <!-- javascript
     ================================================== -->
