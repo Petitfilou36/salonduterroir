@@ -1818,3 +1818,33 @@ footer:before{
 -webkit-transform: rotate(10deg);
 transform: rotate(10deg);
 }
+/* Custom buttons for home page */
+.btn-exposants {
+    background-color: #68A0B0;
+    color: #fff;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+.btn-exposants:hover {
+    background-color: #528290;
+    color: #fff;
+    transform: scale(1.05);
+    text-decoration: none;
+}
+
+.btn-plan {
+    background-color: #D67B5E;
+    color: #fff;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+.btn-plan:hover {
+    background-color: #B56248;
+    color: #fff;
+    transform: scale(1.05);
+    text-decoration: none;
+}
